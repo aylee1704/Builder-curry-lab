@@ -59,14 +59,14 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
   return (
     <div className="min-h-screen bg-medical-bg-light flex">
       {/* Sidebar */}
-      <div className="w-80 bg-medical-bg-sidebar flex flex-col fixed h-full lg:relative lg:h-auto">
+      <div className="w-80 bg-medical-bg-sidebar flex flex-col">
         {/* Profile Section */}
         <div className="p-6 flex items-center justify-center">
           <div className="w-44 h-44 bg-gray-300 rounded-full"></div>
         </div>
 
         {/* Navigation */}
-        <nav className="flex-1 px-0">
+        <nav className="flex-1">
           <div className="space-y-2">
             {navigationItems.map((item) => {
               const isActive = isActiveRoute(item.path);
@@ -77,19 +77,21 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
                   {isActive && (
                     <div className="absolute left-0 top-1 w-1 h-12 bg-medical-orange rounded-r-sm"></div>
                   )}
-                  <Link
-                    to={item.path}
-                    className={`flex items-center gap-4 px-6 py-4 mx-6 rounded-lg transition-colors ${
-                      isActive
-                        ? "bg-medical-orange text-white shadow-lg ml-10"
-                        : "text-medical-active-gray hover:bg-gray-100"
-                    }`}
-                  >
-                    <Icon className="w-5 h-5" />
-                    <span className="font-nunito text-base font-bold">
-                      {item.label}
-                    </span>
-                  </Link>
+                  <div className={isActive ? "ml-10" : "ml-0"}>
+                    <Link
+                      to={item.path}
+                      className={`flex items-center gap-4 px-6 py-4 mx-6 rounded-lg transition-colors ${
+                        isActive
+                          ? "bg-medical-orange text-white shadow-lg"
+                          : "text-medical-active-gray hover:bg-gray-100"
+                      }`}
+                    >
+                      <Icon className="w-5 h-5" />
+                      <span className="font-nunito text-base font-bold">
+                        {item.label}
+                      </span>
+                    </Link>
+                  </div>
                 </div>
               );
             })}
@@ -100,7 +102,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
         <div className="p-6">
           <button
             onClick={handleLogout}
-            className="flex items-center gap-4 px-6 py-4 text-medical-active-gray hover:bg-gray-100 rounded-lg transition-colors w-full"
+            className="flex items-center gap-4 px-6 py-4 ml-6 text-medical-active-gray hover:bg-gray-100 rounded-lg transition-colors"
           >
             <Settings className="w-5 h-5" />
             <span className="font-nunito text-base font-bold">
@@ -111,7 +113,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col lg:ml-0 ml-80">
+      <div className="flex-1 flex flex-col">
         {/* Search Bar */}
         <div className="p-6">
           <div className="max-w-md mx-auto relative">
