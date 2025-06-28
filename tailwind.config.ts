@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        "zen-kaku": ["Zen Kaku Gothic Antique", "sans-serif"],
+        lato: ["Lato", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -56,6 +60,21 @@ export default {
           "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
+        },
+        // Medical app specific colors
+        medical: {
+          orange: "#FA9819",
+          "dark-gray": "#212121",
+          "medium-gray": "#424242",
+          "light-gray": "#757575",
+          "placeholder-gray": "#BDBDBD",
+          "active-gray": "#AAB2C8",
+          "bg-light": "#F5F6FA",
+          "bg-sidebar": "#F0F0F0",
+          "card-bg": "#FAFAFA",
+          "input-bg": "#E0E0E0",
+          navy: "#1E3D59",
+          "border-gray": "#B6C9CF",
         },
       },
       borderRadius: {
