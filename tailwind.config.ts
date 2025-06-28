@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         "zen-kaku": ["Zen Kaku Gothic Antique", "sans-serif"],
         lato: ["Lato", "sans-serif"],
+        nunito: ["Nunito Sans", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
