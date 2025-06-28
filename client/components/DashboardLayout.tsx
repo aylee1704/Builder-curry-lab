@@ -111,7 +111,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col lg:ml-0 ml-80">
         {/* Search Bar */}
         <div className="p-6">
           <div className="max-w-md mx-auto relative">
