@@ -59,14 +59,14 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
   return (
     <div className="min-h-screen bg-medical-bg-light flex">
       {/* Sidebar */}
-      <div className="w-80 bg-medical-bg-sidebar flex flex-col">
+      <div className="w-80 bg-medical-bg-sidebar flex flex-col fixed h-full lg:relative lg:h-auto">
         {/* Profile Section */}
         <div className="p-6 flex items-center justify-center">
           <div className="w-44 h-44 bg-gray-300 rounded-full"></div>
         </div>
 
         {/* Navigation */}
-        <nav className="flex-1 px-6">
+        <nav className="flex-1 px-0">
           <div className="space-y-2">
             {navigationItems.map((item) => {
               const isActive = isActiveRoute(item.path);
@@ -79,10 +79,10 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
                   )}
                   <Link
                     to={item.path}
-                    className={`flex items-center gap-4 px-6 py-4 rounded-lg transition-colors ${
+                    className={`flex items-center gap-4 px-6 py-4 mx-6 rounded-lg transition-colors ${
                       isActive
                         ? "bg-medical-orange text-white shadow-lg ml-10"
-                        : "text-medical-active-gray hover:bg-gray-100 ml-6"
+                        : "text-medical-active-gray hover:bg-gray-100"
                     }`}
                   >
                     <Icon className="w-5 h-5" />
